@@ -1,20 +1,25 @@
 class Plant:
+    """Represent a plant with its name, height, and age in days."""
     def __init__(self, name: str, height: int, age_days: int) -> None:
         self.name = name
         self.height = height
         self.age_days = age_days
 
     def grow(self, cm: int) -> None:
+        """Increase the plant's height by a given number of centimeters."""
         self.height += cm
 
     def age(self) -> None:
+        """Increase the plant's age by one day."""
         self.age_days += 1
 
     def get_info(self) -> None:
+        """Print a formatted description of the plant's current state."""
         print(f"{self.name}: {self.height}cm, {self.age_days} days old")
 
 
 def grow_in_days(height_last_day: int, height_day_one: int) -> None:
+    """Print the growth difference between two recorded heights."""
     growth: int = height_last_day - height_day_one
     print(f"Growth this week: +{growth}cm")
 
@@ -28,16 +33,14 @@ if __name__ == "__main__":
 
     print("=== Day 1 ===")
 
-    # Guardamos alturas iniciales
     day_one_heights: list[int] = []
     for plant in plants:
         plant.get_info()
         day_one_heights.append(plant.height)
 
-    # Simulamos 6 días de crecimiento
     for _ in range(6):
         for plant in plants:
-            plant.grow(2)
+            plant.grow(1)
             plant.age()
 
     print("=== Day 7 ===")
