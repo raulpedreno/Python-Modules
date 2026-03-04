@@ -1,17 +1,19 @@
 import sys
 
 
-def main():
+def main() -> None:
+    """Analyze player scores from command-line arguments."""
     print("=== Player Score Analytics ===")
 
-    
     if len(sys.argv) == 1:
-        print("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+        print(
+            "No scores provided. Usage: python3 ft_score_analytics.py "
+            "<score1> <score2> ..."
+        )
         return
 
     scores: list[int] = []
 
-    
     for arg in sys.argv[1:]:
         try:
             scores.append(int(arg))
@@ -22,12 +24,12 @@ def main():
         print("No valid scores to analyze.")
         return
 
-    total_players = len(scores)
-    total_score = sum(scores)
-    average_score = total_score / total_players
-    high_score = max(scores)
-    low_score = min(scores)
-    score_range = high_score - low_score
+    total_players: int = len(scores)
+    total_score: int = sum(scores)
+    average_score: float = total_score / total_players
+    high_score: int = max(scores)
+    low_score: int = min(scores)
+    score_range: int = high_score - low_score
 
     print(f"Scores processed: {scores}")
     print(f"Total players: {total_players}")
