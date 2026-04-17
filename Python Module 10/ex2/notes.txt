@@ -1,0 +1,13 @@
+En EX2 demuestro que entiendo lexical scoping y closures en Python.
+El objetivo es crear funciones que recuerdan valores incluso después de que la función exterior haya terminado.
+
+Esto se consigue porque:
+
+Python guarda el entorno léxico donde se creó la función.
+
+Las funciones internas capturan variables de ese entorno.
+
+Esas variables siguen existiendo mientras la función interna exista.
+
+No uso variables globales, porque el subject lo prohíbe.
+Uso nonlocal, que es la herramienta correcta para modificar variables del scope exterior.
