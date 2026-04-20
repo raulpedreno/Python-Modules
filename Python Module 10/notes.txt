@@ -1,0 +1,12 @@
+spell_timer es un decorador que envuelve una función para medir su tiempo de ejecución.
+Uso functools.wraps para preservar el nombre y metadata de la función original.
+Antes de ejecutar la función imprimo un mensaje, mido el tiempo con time.time(), y al final imprimo la duración formateada a 3 decimales.
+Devuelvo el resultado original para no alterar el comportamiento de la función decorada
+
+
+
+Primera capa → recibe parámetros del decorador
+
+Segunda capa → recibe la función a decorar
+
+Tercera capa → ejecuta la lógica y llama a la función
