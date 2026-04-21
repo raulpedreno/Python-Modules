@@ -1,3 +1,0 @@
-👉 reduce sirve para convertir una lista en un solo valor aplicando una función repetidamente.-> reduce(función, lista)
-En vez de escribir 3 funciones distintas, creas una sola base y generas variaciones.
-partial_enchanter recibe una función base y usa functools.partial para crear tres versiones especializadas

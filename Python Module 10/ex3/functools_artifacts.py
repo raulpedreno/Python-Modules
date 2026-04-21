@@ -1,6 +1,6 @@
 from functools import reduce, partial, lru_cache, singledispatch
 import operator
-from typing import Callable, Any
+from typing import Callable
 
 
 def spell_reducer(spells: list[int], operation: str) -> int:
@@ -45,7 +45,7 @@ def memoized_fibonacci(n: int) -> int:
 def spell_dispatcher() -> Callable:
     @singledispatch
     def cast(arg):
-        return f"Unknown spell type"
+        return "Unknown spell type"
 
     @cast.register(int)
     def _(arg: int) -> str:
@@ -82,6 +82,7 @@ def main() -> None:
     print(dispatcher("fireball"))
     print(dispatcher([1, 2, 3]))
     print(dispatcher(3.14))
+
 
 if __name__ == "__main__":
     main()

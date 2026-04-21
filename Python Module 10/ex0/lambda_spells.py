@@ -1,11 +1,14 @@
 def artifact_sorter(artifacts: list[dict]) -> list[dict]:
     return sorted(artifacts, key=lambda a: a['power'], reverse=True)
 
+
 def power_filter(mages: list[dict], min_power: int) -> list[dict]:
     return list(filter(lambda m: m['power'] >= min_power, mages))
 
+
 def spell_transformer(spells: list[str]) -> list[str]:
     return list(map(lambda s: f"* {s} *", spells))
+
 
 def mage_stats(mages: list[dict]) -> dict:
     powers = list(map(lambda m: m['power'], mages))
@@ -14,6 +17,7 @@ def mage_stats(mages: list[dict]) -> dict:
         'min_power': min(powers),
         'avg_power': round(sum(powers) / len(powers), 2)
     }
+
 
 if __name__ == "__main__":
 
@@ -24,8 +28,11 @@ if __name__ == "__main__":
         {"name": "Shadow Dagger", "power": 40, "type": "dark"}
     ]
     sorted_artifacts = artifact_sorter(artifacts)
-    print(f"{sorted_artifacts[0]['name']} ({sorted_artifacts[0]['power']} power) "
-          f"comes before {sorted_artifacts[1]['name']} ({sorted_artifacts[1]['power']} power)")
+    print(
+        f"{sorted_artifacts[0]['name']} "
+        f"({sorted_artifacts[0]['power']} power) "
+        f"comes before {sorted_artifacts[1]['name']}"
+        f" ({sorted_artifacts[1]['power']} power)")
 
     print("\nTesting power filter ...")
     mages = [

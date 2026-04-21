@@ -34,7 +34,7 @@ def spell_sequence(spells: list[Callable]) -> Callable:
 
 
 if __name__ == "__main__":
-    # --- Example spells ---
+
     def fireball(target: str, power: int) -> str:
         return f"Fireball hits {target} for {power} damage"
 
@@ -54,8 +54,8 @@ if __name__ == "__main__":
 
     print("\n=== Testing conditional_caster ===")
     strong_only = conditional_caster(lambda t, p: p > 40, fireball)
-    print(strong_only("Goblin", 30))  # fizzled
-    print(strong_only("Goblin", 60))  # works
+    print(strong_only("Goblin", 30))
+    print(strong_only("Goblin", 60))
 
     print("\n=== Testing spell_sequence ===")
     seq = spell_sequence([fireball, heal, shield])
